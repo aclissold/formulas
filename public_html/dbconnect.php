@@ -1,5 +1,5 @@
 <?php
-if(!mysql_connect("localhost","aaronmgiroux","oakland"))
+if(!mysql_connect("localhost","username","password"))
 {
      die('oops connection problem ! --> '.mysql_error());
 }
