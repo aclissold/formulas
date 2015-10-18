@@ -16,9 +16,10 @@ $userRow=mysql_fetch_array($res);
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<title>Formulas</title>
 	<link rel="stylesheet" href="style.css" type="text/css" />
+	<script src="jquery-2.1.4.min.js"></script>
 </head>
 
-<body>
+<body id="main-body">
 	<div id="header">
 		<div id="left">
 			<label>Formulas</label>
@@ -38,14 +39,15 @@ $userRow=mysql_fetch_array($res);
 		<?php $count_physics = mysql_query("SELECT COUNT(CAT_ID) AS MATHROWS FROM FORMULA WHERE CAT_ID = 2"); ?>
 		
 		<center>
-			<div id="formula-table" style="width: 80%; margin-top: 100px">
-				<table class="category-table">
-					<tr>
-						<td <h2 style="color:#a5a5a5; margin-bottom:10px">All (<?php echo $count_all ?>)</h2></td>
-						<td <h2 style="color:#a5a5a5; margin-bottom:10px">Math (<?php echo mysql_result($count_math,0) ?>)</h2></td>
-						<td <h2 style="color:#a5a5a5; margin-bottom:10px">Physics (<?php echo mysql_result($count_physics,0) ?>)</h2></td>
+			<div id="formula-table" style="width: 80%; margin-top: 50px">
+				<table style="width:100%" class="category-table">
+					<tr style="width:100%">
+						<td style="width:15%" <h2><a href="/#" style="color:#a5a5a5; margin-bottom:10px">All (<?php echo $count_all ?>)</a></h2></td>
+						<td style="width:15%" <h2><a href="/#" style="color:#a5a5a5; margin-bottom:10px">Math (<?php echo mysql_result($count_math,0) ?>)</a></h2></td>
+						<td style="width:15%" <h2><a href="/#" style="color:#a5a5a5; margin-bottom:10px">Physics (<?php echo mysql_result($count_physics,0) ?>)</a></h2></td>
+						<td class="add-button" <button type="button" id="addFormula">Add New</button></td>						
 					</tr>
-				</table>
+				</table>				
 				<table >
 					<tr style="background:#a5a5a5">
 						<td style="color:#ffffff"><b>Name</b></td>
@@ -57,8 +59,8 @@ $userRow=mysql_fetch_array($res);
 					</tr>
 					<?php while($row = mysql_fetch_array($result)) : ?>
 					<tr>
-						<td style="width:10%"><?php echo $row['FORM_NAME']; ?></td>
-						<td style="width:40%"><?php echo substr($row['FORM_DESC'],0,70).'...'; ?></td>
+						<td style="width:15%"><?php echo $row['FORM_NAME']; ?></td>
+						<td style="width:35%"><?php echo substr($row['FORM_DESC'],0,70).'...'; ?></td>
 						<td style="width:20%"><?php echo $row['FORM_FORMULA']; ?></td>
 						<td style="width:10%"><?php echo date('m-d-Y', strtotime($row['FORM_DATE']) ); ?></td>
 						<td style="width:10%"><?php echo $row['USERNAME']; ?></td>
@@ -69,5 +71,14 @@ $userRow=mysql_fetch_array($res);
 			</div>
 		</center>
 	</div>
+	
+	<script>
+        $(document).ready(function() {
+            $('#addFormula').click(function(event){
+               $('#main-body').load('add.php');
+            });
+        });
+     </script>
+
 </body>
 </html>
