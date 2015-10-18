@@ -1,9 +1,9 @@
 <?php
-if(!mysql_connect("localhost","aaronmgiroux","oakland"))
+if(!mysql_connect("localhost","username","password"))
 {
      die('oops connection problem ! --> '.mysql_error());
 }
-if(!mysql_select_db("CSE345DATABASE"))
+if(!mysql_select_db("databasename"))
 {
      die('oops database selection problem ! --> '.mysql_error());
 }
