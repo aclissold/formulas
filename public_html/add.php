@@ -92,11 +92,18 @@ $userRow=mysql_fetch_array($res);
 					</tr>
 					<tr>
 						<td class="cancel-button" <button type="button" id="cancelAdd">Cancel</button></td>	
-						<td class="save-button" <button type="submit" name="addFormula">Save</button></td>	
+						<td class="save-button" <button type="submit" name="addFormula" id="addFormula">Save</button></td>	
 					</tr>
 				</table>
 			</div>
 		</center>
 	</div>
+	<script>
+        $(document).ready(function() {
+            $('#cancelAdd').click(function(event){
+               $('#main-body').load('home.php');
+            });
+        });
+     </script>
 </body>
 </html>
