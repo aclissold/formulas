@@ -8,7 +8,14 @@ if(!isset($_SESSION['user']))
 }
 $res=mysql_query("SELECT * FROM USER WHERE USER_ID=".$_SESSION['user']);
 $userRow=mysql_fetch_array($res);
+
+if(isset($_POST['add-new']))
+{
+	header("Location: add.php");
+}
+
 ?>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 
@@ -45,7 +52,9 @@ $userRow=mysql_fetch_array($res);
 						<td style="width:15%" <h2><a href="/#" style="color:#a5a5a5; margin-bottom:10px">All (<?php echo $count_all ?>)</a></h2></td>
 						<td style="width:15%" <h2><a href="/#" style="color:#a5a5a5; margin-bottom:10px">Math (<?php echo mysql_result($count_math,0) ?>)</a></h2></td>
 						<td style="width:15%" <h2><a href="/#" style="color:#a5a5a5; margin-bottom:10px">Physics (<?php echo mysql_result($count_physics,0) ?>)</a></h2></td>
-						<td class="add-button" <button type="button" id="addFormula">Add New</button></td>						
+						<form method="post">
+							<td><button class="add-new-button" type="submit" name="add-new">Add New</button></td>
+						</form>
 					</tr>
 				</table>				
 				<table >
@@ -70,15 +79,6 @@ $userRow=mysql_fetch_array($res);
 				</table>
 			</div>
 		</center>
-	</div>
-	
-	<script>
-        $(document).ready(function() {
-            $('#addFormula').click(function(event){
-               $('#main-body').load('add.php');
-            });
-        });
-     </script>
-
+	</div>	
 </body>
 </html>

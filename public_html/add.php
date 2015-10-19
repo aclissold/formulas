@@ -6,26 +6,26 @@ if(!isset($_SESSION['user']))
 {
  header("Location: index.php");
 }
+$res=mysql_query("SELECT * FROM USER WHERE USER_ID=".$_SESSION['user']);
+$userRow=mysql_fetch_array($res);
 
-if(isset($_POST['addFormula']))
-{
+if(isset($_POST['add-formula']))
+{	
  $uid = $_SESSION['user'];
  $name = mysql_real_escape_string($_POST['name']);
  $formula = mysql_real_escape_string($_POST['formula']);
  $desc = mysql_real_escape_string($_POST['description']);
  $cat_selected = mysql_real_escape_string($_POST['category']);
- if($cat_selected = 'Math'){
+ if($cat_selected == 'Math'){
 	 $catid = 1;
  }
  else {
 	 $catid = 2;
  }
  
- if(mysql_query("INSERT INTO FORMULA(FORM_NAME,FORM_DESC,FORM_FORMULA,FORM_DATE,USER_ID,CAT_ID) VALUES('$name','$desc','$formula',now(),'$uid','$catid')"))
+ if(mysql_query("INSERT INTO FORMULA(FORM_NAME,FORM_DESC,FORM_FORMULA,USER_ID,CAT_ID) VALUES('$name','$desc','$formula','$uid','$catid')"))
  {
-  ?>
-        <script>alert('successfully added ');</script>
-        <?php
+  header("Location:http://www.softwaresolutioneer.com");
  }
  else
  {
@@ -35,9 +35,8 @@ if(isset($_POST['addFormula']))
  }
 }
 
-$res=mysql_query("SELECT * FROM USER WHERE USER_ID=".$_SESSION['user']);
-$userRow=mysql_fetch_array($res);
 ?>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 
@@ -86,14 +85,14 @@ $userRow=mysql_fetch_array($res);
 							Physics
 							<h3 style="color:#a5a5a5; margin:5px 0 0 0">Description:</h3>
 							<textarea class="description-textarea" name="description" ></textarea>	
-							<br>							  
+							<br>	
+							<tr>
+								<td class="cancel-button"><a href="http://www.softwaresolutioneer.com"><button type="button" name="cancelAdd">Cancel</button></a></td>
+								<td class="save-button"> <button type="submit" name="add-formula">Save</button></td></td>
+							</tr>
 						</form>
 						</td>
-					</tr>
-					<tr>
-						<td class="cancel-button" <button type="button" id="cancelAdd">Cancel</button></td>	
-						<td class="save-button" <button type="submit" name="addFormula" id="addFormula">Save</button></td>	
-					</tr>
+					</tr>					
 				</table>
 			</div>
 		</center>

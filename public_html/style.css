@@ -123,8 +123,7 @@ table tr td a
 
 .cancel-button {
 	float: left;
-    width: 80px;
-    background-color: #a5a5a5;
+    width: 120px;
     margin: 10px 0 0 15px;
     text-align: center;
     cursor: pointer;
@@ -133,8 +132,16 @@ table tr td a
 
 .save-button {
 	float: right;
-    width: 80px;
-    background-color: #49E20E;
+    width: 120px;
+    margin: 10px 15px;
+    text-align: center;
+    cursor: pointer;
+	color: #ffffff;
+}
+
+.add-new-button {
+	float: right;
+    width: 120px;
     margin: 10px 15px;
     text-align: center;
     cursor: pointer;
