@@ -154,6 +154,11 @@ table tr td a
     text-align: center;
     cursor: pointer;
 	color: #ffffff;
+	background-color: #a5a5a5;
+}
+
+.active{
+	background-color: #49E20E;
 }
 
 .radio-button {

@@ -13,22 +13,16 @@ if(isset($_POST['add-new']))
 {
 	header("Location: add.php");
 }
-if(isset($_POST['all'])){
+if(isset($_POST['math'])){
+	$result = mysql_query("SELECT * FROM FORMULA WHERE CAT_ID=1");
+}
+else if(isset($_POST['physics'])){
+	$result = mysql_query("SELECT * FROM FORMULA WHERE CAT_ID=2");
+}
+else{
 	$result = mysql_query("SELECT *, USER.USER_NAME AS USERNAME, 
 							CATEGORY.CAT_NAME AS CATEGORYNAME FROM FORMULA INNER JOIN USER ON FORMULA.USER_ID = USER.USER_ID 
 							INNER JOIN CATEGORY ON FORMULA.CAT_ID = CATEGORY.CAT_ID");
-}
-if(isset($_POST['math'])){
-	$result = mysql_query("SELECT *, USER.USER_NAME AS USERNAME, 
-							CATEGORY.CAT_NAME AS CATEGORYNAME FROM FORMULA INNER JOIN USER ON FORMULA.USER_ID = USER.USER_ID 
-							INNER JOIN CATEGORY ON FORMULA.CAT_ID = CATEGORY.CAT_ID
-							WHERE CATEGORYNAME='Math' ");
-}
-if(isset($_POST['physics'])){
-	$result = mysql_query("SELECT *, USER.USER_NAME AS USERNAME, 
-							CATEGORY.CAT_NAME AS CATEGORYNAME FROM FORMULA INNER JOIN USER ON FORMULA.USER_ID = USER.USER_ID 
-							INNER JOIN CATEGORY ON FORMULA.CAT_ID = CATEGORY.CAT_ID
-							WHERE CATEGORYNAME='Physics' ");
 }
 
 $count_math = mysql_query("SELECT COUNT(CAT_ID) AS MATHROWS FROM FORMULA WHERE CAT_ID = 1");
@@ -64,7 +58,7 @@ $count_all = mysql_query("SELECT COUNT(*) AS ALLROWS FROM FORMULA");
 				<table style="width:100%" class="category-table">
 					<tr style="width:100%">
 						<form method="post">
-							<td style="width:15%"><button class="category-button" type="submit" name="all">All (<?php echo mysql_result($count_all,0) ?>)</button></td>
+							<td style="width:15%"><button class="category-button" onclick="changeColor()" type="submit" name="all">All (<?php echo mysql_result($count_all,0) ?>)</button></td>
 						</form>
 						<form method="post">
 							<td style="width:15%"><button class="category-button" type="submit" name="math">Math (<?php echo mysql_result($count_math,0) ?>)</a></h2></td>
@@ -99,6 +93,6 @@ $count_all = mysql_query("SELECT COUNT(*) AS ALLROWS FROM FORMULA");
 				</table>
 			</div>
 		</center>
-	</div>	
+	</div>
 </body>
 </html>
