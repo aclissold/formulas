@@ -25,7 +25,7 @@ if(isset($_POST['add-formula']))
  
  if(mysql_query("INSERT INTO FORMULA(FORM_NAME,FORM_DESC,FORM_FORMULA,USER_ID,CAT_ID) VALUES('$name','$desc','$formula','$uid','$catid')"))
  {
-  header("Location:http://www.softwaresolutioneer.com");
+  header("Location:http://www.softwaresolutioneer.com/home.php");
  }
  else
  {
