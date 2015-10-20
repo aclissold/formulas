@@ -13,6 +13,27 @@ if(isset($_POST['add-new']))
 {
 	header("Location: add.php");
 }
+if(isset($_POST['all'])){
+	$result = mysql_query("SELECT *, USER.USER_NAME AS USERNAME, 
+							CATEGORY.CAT_NAME AS CATEGORYNAME FROM FORMULA INNER JOIN USER ON FORMULA.USER_ID = USER.USER_ID 
+							INNER JOIN CATEGORY ON FORMULA.CAT_ID = CATEGORY.CAT_ID");
+}
+if(isset($_POST['math'])){
+	$result = mysql_query("SELECT *, USER.USER_NAME AS USERNAME, 
+							CATEGORY.CAT_NAME AS CATEGORYNAME FROM FORMULA INNER JOIN USER ON FORMULA.USER_ID = USER.USER_ID 
+							INNER JOIN CATEGORY ON FORMULA.CAT_ID = CATEGORY.CAT_ID
+							WHERE CATEGORYNAME='Math' ");
+}
+if(isset($_POST['physics'])){
+	$result = mysql_query("SELECT *, USER.USER_NAME AS USERNAME, 
+							CATEGORY.CAT_NAME AS CATEGORYNAME FROM FORMULA INNER JOIN USER ON FORMULA.USER_ID = USER.USER_ID 
+							INNER JOIN CATEGORY ON FORMULA.CAT_ID = CATEGORY.CAT_ID
+							WHERE CATEGORYNAME='Physics' ");
+}
+
+$count_math = mysql_query("SELECT COUNT(CAT_ID) AS MATHROWS FROM FORMULA WHERE CAT_ID = 1");
+$count_physics = mysql_query("SELECT COUNT(CAT_ID) AS MATHROWS FROM FORMULA WHERE CAT_ID = 2");
+$count_all = mysql_query("SELECT COUNT(*) AS ALLROWS FROM FORMULA");
 
 ?>
 
@@ -37,21 +58,20 @@ if(isset($_POST['add-new']))
 			</div>
 		</div>		
 	</div>
-	<div id="body">
-		<?php $result = mysql_query("SELECT *, USER.USER_NAME AS USERNAME, 
-									CATEGORY.CAT_NAME AS CATEGORYNAME FROM FORMULA INNER JOIN USER ON FORMULA.USER_ID = USER.USER_ID 
-									INNER JOIN CATEGORY ON FORMULA.CAT_ID = CATEGORY.CAT_ID"); ?>
-		<?php $count_all = mysql_num_rows($result); ?>
-		<?php $count_math = mysql_query("SELECT COUNT(CAT_ID) AS MATHROWS FROM FORMULA WHERE CAT_ID = 1"); ?>
-		<?php $count_physics = mysql_query("SELECT COUNT(CAT_ID) AS MATHROWS FROM FORMULA WHERE CAT_ID = 2"); ?>
-		
+	<div id="body" style="margin-bottom:100px">		
 		<center>
 			<div id="formula-table" style="width: 80%; margin-top: 50px">
 				<table style="width:100%" class="category-table">
 					<tr style="width:100%">
-						<td style="width:15%" <h2><a href="/#" style="color:#a5a5a5; margin-bottom:10px">All (<?php echo $count_all ?>)</a></h2></td>
-						<td style="width:15%" <h2><a href="/#" style="color:#a5a5a5; margin-bottom:10px">Math (<?php echo mysql_result($count_math,0) ?>)</a></h2></td>
-						<td style="width:15%" <h2><a href="/#" style="color:#a5a5a5; margin-bottom:10px">Physics (<?php echo mysql_result($count_physics,0) ?>)</a></h2></td>
+						<form method="post">
+							<td style="width:15%"><button class="category-button" type="submit" name="all">All (<?php echo mysql_result($count_all,0) ?>)</button></td>
+						</form>
+						<form method="post">
+							<td style="width:15%"><button class="category-button" type="submit" name="math">Math (<?php echo mysql_result($count_math,0) ?>)</a></h2></td>
+						</form>
+						<form method="post">
+							<td style="width:15%"><h2><button class="category-button" type="submit" name="physics">Physics (<?php echo mysql_result($count_physics,0) ?>)</a></h2></td>
+						</form>
 						<form method="post">
 							<td><button class="add-new-button" type="submit" name="add-new">Add New</button></td>
 						</form>

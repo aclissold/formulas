@@ -148,11 +148,20 @@ table tr td a
 	color: #ffffff;
 }
 
+.category-button {
+    width: 140px;
+    margin: 10px 15px;
+    text-align: center;
+    cursor: pointer;
+	color: #ffffff;
+}
+
 .radio-button {
     width: 20px;
 	height:20px;
     margin: 10px 15px;
     text-align: center;
+	box-shadow: none;
 }
 
 .description-textarea {

@@ -58,7 +58,7 @@ if(isset($_POST['add-formula']))
 			</div>
 		</div>		
 	</div>
-	<div id="body">			
+	<div id="body" style="margin-bottom:100px">			
 		<center>
 			<div style="width: 80%; margin-top: 50px">
 				<table style="width:100%" class="category-table">

@@ -19,7 +19,7 @@ if(isset($_POST['btn-login']))
  }
  else
  {
-  ?>
+  ?>		
         <script>alert('wrong details');</script>
         <?php
  }
@@ -52,6 +52,14 @@ if(isset($_POST['btn-login']))
 </tr>
 </table>
 </form>
+<?php
+echo $_SESSION['user'];
+echo $row['USER_ID'];
+echo $email;
+echo $row['USER_EMAIL'];
+echo $upass;
+echo $row['USER_PASS'];
+?>
 </div>
 </center>
 </body>
