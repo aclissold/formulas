@@ -25,7 +25,7 @@ if(isset($_POST['add-formula']))
  
  if(mysql_query("INSERT INTO FORMULA(FORM_NAME,FORM_DESC,FORM_FORMULA,USER_ID,CAT_ID) VALUES('$name','$desc','$formula','$uid','$catid')"))
  {
-  header("Location:http://www.softwaresolutioneer.com/home.php");
+  header("Location: /home.php");
  }
  else
  {
@@ -73,10 +73,10 @@ if(isset($_POST['add-formula']))
 						<td>
 						<form method="post">
 							<h3 style="color:#a5a5a5; margin:5px 0 0 0">Name:</h3>
-							<input type="text" name="name">
+							<input type="text" name="name" required>
 							<br>
 							<h3 style="color:#a5a5a5; margin:5px 0 0 0">Formula:</h3>
-							<input type="text" name="formula">
+							<input type="text" name="formula" required>
 							<br>
 							<h3 style="color:#a5a5a5; margin:5px 0 0 0">Category:</h3>
 							<input class="radio-button" type="radio" id="math" name="category" value="Math" checked>
@@ -84,7 +84,7 @@ if(isset($_POST['add-formula']))
 							<input class="radio-button" type="radio" name="category" value="Physics">
 							Physics
 							<h3 style="color:#a5a5a5; margin:5px 0 0 0">Description:</h3>
-							<textarea class="description-textarea" name="description" ></textarea>	
+							<textarea class="description-textarea" name="description" required></textarea>	
 							<br>	
 							<tr>
 								<td class="cancel-button"><a href="http://www.softwaresolutioneer.com"><button type="button" name="cancelAdd">Cancel</button></a></td>

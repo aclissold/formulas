@@ -33,6 +33,19 @@ $count_math = mysql_query("SELECT COUNT(CAT_ID) AS MATHROWS FROM FORMULA WHERE C
 $count_physics = mysql_query("SELECT COUNT(CAT_ID) AS MATHROWS FROM FORMULA WHERE CAT_ID = 2");
 $count_all = mysql_query("SELECT COUNT(*) AS ALLROWS FROM FORMULA");
 
+if(isset($_POST['delete'])){	
+	$delete_id = $_POST['delete'];
+	$result = mysql_query("DELETE FROM FORMULA WHERE FORM_ID='$delete_id'");
+	
+	$result = mysql_query("SELECT *, USER.USER_NAME AS USERNAME, 
+							CATEGORY.CAT_NAME AS CATEGORYNAME FROM FORMULA INNER JOIN USER ON FORMULA.USER_ID = USER.USER_ID 
+							INNER JOIN CATEGORY ON FORMULA.CAT_ID = CATEGORY.CAT_ID");
+							
+	$count_math = mysql_query("SELECT COUNT(CAT_ID) AS MATHROWS FROM FORMULA WHERE CAT_ID = 1");
+	$count_physics = mysql_query("SELECT COUNT(CAT_ID) AS MATHROWS FROM FORMULA WHERE CAT_ID = 2");
+	$count_all = mysql_query("SELECT COUNT(*) AS ALLROWS FROM FORMULA");
+}
+
 ?>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -83,15 +96,32 @@ $count_all = mysql_query("SELECT COUNT(*) AS ALLROWS FROM FORMULA");
 						<td style="color:#ffffff"><b>Date</b></td>
 						<td style="color:#ffffff"><b>User</b></td>
 						<td style="color:#ffffff"><b>Category</b></td>
+						<td style="color:#ffffff"><b></b></td>
 					</tr>
 					<?php while($row = mysql_fetch_array($result)) : ?>
 					<tr>
 						<td style="width:15%"><?php echo $row['FORM_NAME']; ?></td>
-						<td style="width:35%"><?php echo substr($row['FORM_DESC'],0,70).'...'; ?></td>
+						<td style="width:30%"><?php echo substr($row['FORM_DESC'],0,70).'...'; ?></td>
 						<td style="width:20%"><?php echo $row['FORM_FORMULA']; ?></td>
-						<td style="width:10%"><?php echo date('m-d-Y', strtotime($row['FORM_DATE']) ); ?></td>
-						<td style="width:10%"><?php echo $row['USERNAME']; ?></td>
+						<td style="width:12%"><?php echo date('m-d-Y', strtotime($row['FORM_DATE']) ); ?></td>
+						<td style="width:13%"><?php echo $row['USERNAME']; ?></td>
 						<td style="width:10%"><?php echo $row['CATEGORYNAME']; ?></td>
+						<?php
+						if(13 == $_SESSION['user']) {
+						?>
+							<form method="post">
+								<td><button class="delete-formula" type="submit" name="delete" value="<? echo $row['FORM_ID']; ?>" >Delete</button></td>
+							</form>
+						<?php 
+						} 
+						else if($row['USER_ID'] == $_SESSION['user']){
+						?>
+							<form method="post">
+								<td><button class="delete-formula" type="submit" name="delete" value="<? echo $row['FORM_ID']; ?>" >Delete</button></td>
+							</form>
+						<?php
+						}
+						?>
 					</tr>
 					<?php endwhile; ?>
 				</table>

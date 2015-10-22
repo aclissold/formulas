@@ -29,38 +29,40 @@ if(isset($_POST['btn-login']))
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Software Solutioneer</title>
-<link rel="stylesheet" href="style.css" type="text/css" />
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>Formulas</title>
+	<link rel="stylesheet" href="style.css" type="text/css" />
+	<script src="jquery-2.1.4.min.js"></script>
 </head>
 <body>
-<center>
-<div id="login-form">
-<form method="post">
-<table align="center" width="30%" border="0">
-<tr>
-<td><input type="text" name="email" placeholder="Your Email" required /></td>
-</tr>
-<tr>
-<td><input type="password" name="pass" placeholder="Your Password" required /></td>
-</tr>
-<tr>
-<td><button type="submit" name="btn-login">Sign In</button></td>
-</tr>
-<tr>
-<td><a href="register.php">Sign Up Here</a></td>
-</tr>
-</table>
-</form>
-<?php
-echo $_SESSION['user'];
-echo $row['USER_ID'];
-echo $email;
-echo $row['USER_EMAIL'];
-echo $upass;
-echo $row['USER_PASS'];
-?>
-</div>
-</center>
+	<div id="header">
+		<div id="left">
+			<label>Formulas</label>
+		</div>
+		<div id="right">
+			<div id="content">
+			</div>
+		</div>		
+	</div>
+	<center>
+		<div id="login-form">
+			<form method="post">
+				<table align="center" width="30%" border="0">
+					<tr>
+						<td><input type="text" name="email" placeholder="Your Email" required /></td>
+					</tr>
+					<tr>
+						<td><input type="password" name="pass" placeholder="Your Password" required /></td>
+					</tr>
+					<tr>
+						<td><button type="submit" name="btn-login">Sign In</button></td>
+					</tr>
+					<tr>
+						<td><a href="register.php">Sign Up Here</a></td>
+					</tr>
+				</table>
+			</form>
+		</div>
+	</center>
 </body>
 </html>

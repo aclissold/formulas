@@ -157,6 +157,15 @@ table tr td a
 	background-color: #a5a5a5;
 }
 
+.delete-formula{
+	width: 120px;
+    margin: 10px 15px;
+    text-align: center;
+    cursor: pointer;
+	color: #ffffff;
+	background-color: #a5a5a5;
+}
+
 .active{
 	background-color: #49E20E;
 }
