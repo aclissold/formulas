@@ -87,7 +87,7 @@ if(isset($_POST['add-formula']))
 							<textarea class="description-textarea" name="description" required></textarea>	
 							<br>	
 							<tr>
-								<td class="cancel-button"><a href="http://www.softwaresolutioneer.com"><button type="button" name="cancelAdd">Cancel</button></a></td>
+								<td class="cancel-button"><a href="/home.php"><button type="button" name="cancelAdd">Cancel</button></a></td>
 								<td class="save-button"> <button type="submit" name="add-formula">Save</button></td></td>
 							</tr>
 						</form>
