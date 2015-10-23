@@ -100,7 +100,7 @@ if(isset($_POST['delete'])){
 					</tr>
 					<?php while($row = mysql_fetch_array($result)) : ?>
 					<tr>
-						<td style="width:15%"><?php echo $row['FORM_NAME']; ?></td>
+						<td style="width:15%"><a href='details.php?FORM_ID=<?php echo $row['FORM_ID']; ?>'><?php echo $row['FORM_NAME']; ?></a></td>
 						<td style="width:30%"><?php echo substr($row['FORM_DESC'],0,70).'...'; ?></td>
 						<td style="width:20%"><?php echo $row['FORM_FORMULA']; ?></td>
 						<td style="width:12%"><?php echo date('m-d-Y', strtotime($row['FORM_DATE']) ); ?></td>

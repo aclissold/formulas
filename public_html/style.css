@@ -130,6 +130,16 @@ table tr td a
 	color: #ffffff;
 }
 
+.details-cancel-button{
+	float: left;
+	height: 40px;
+    width: 120px;
+    text-align: center;
+    cursor: pointer;
+	color: #ffffff;
+	background: a5a5a5;
+}
+
 .save-button {
 	float: right;
     width: 120px;
