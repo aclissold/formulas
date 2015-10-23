@@ -99,7 +99,7 @@ if(isset($_POST['delete'])){
 					<tr>
 						<td style="width:30%"><h1><a href='details.php?FORM_ID=<?php echo $row['FORM_ID']; ?>'><?php echo $row['FORM_NAME']; ?></a></h1></td>
 						<td style="width:50%"><h1 style="color:#a5a5a5;"><?php echo $row['FORM_FORMULA']; ?></h1></td>
-						<td style="width:20%"><h1 style="color:#a5a5a5;"><?php echo $row['CATEGORYNAME']; ?></h1></td>
+						<td style="width:20%"><h2 style="color:#a5a5a5;"><?php echo $row['CATEGORYNAME']; ?></h2></td>
 						<?php
 						if(13 == $_SESSION['user']) {
 						?>
