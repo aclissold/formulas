@@ -91,15 +91,21 @@ if(isset($_POST['delete'])){
 				<table >
 					<tr style="background:#a5a5a5">
 						<td style="color:#ffffff"><b>Name</b></td>
+						<td style="color:#ffffff"><b>Description</b></td>
 						<td style="color:#ffffff"><b>Formula</b></td>
+						<td style="color:#ffffff"><b>Date</b></td>
+						<td style="color:#ffffff"><b>User</b></td>
 						<td style="color:#ffffff"><b>Category</b></td>
 						<td style="color:#ffffff"><b></b></td>
 					</tr>
 					<?php while($row = mysql_fetch_array($result)) : ?>
 					<tr>
-						<td style="width:30%"><h1><a href='details.php?FORM_ID=<?php echo $row['FORM_ID']; ?>'><?php echo $row['FORM_NAME']; ?></a></h1></td>
-						<td style="width:50%"><h1 style="color:#a5a5a5;"><?php echo $row['FORM_FORMULA']; ?></h1></td>
-						<td style="width:20%"><h1 style="color:#a5a5a5;"><?php echo $row['CATEGORYNAME']; ?></h1></td>
+						<td style="width:15%"><a href='details.php?FORM_ID=<?php echo $row['FORM_ID']; ?>'><?php echo $row['FORM_NAME']; ?></a></td>
+						<td style="width:30%"><?php echo substr($row['FORM_DESC'],0,70).'...'; ?></td>
+						<td style="width:20%"><?php echo $row['FORM_FORMULA']; ?></td>
+						<td style="width:12%"><?php echo date('m-d-Y', strtotime($row['FORM_DATE']) ); ?></td>
+						<td style="width:13%"><?php echo $row['USERNAME']; ?></td>
+						<td style="width:10%"><?php echo $row['CATEGORYNAME']; ?></td>
 						<?php
 						if(13 == $_SESSION['user']) {
 						?>
