@@ -21,18 +21,31 @@ if(isset($_POST['add-formula']))
  }
  else {
 	 $catid = 2;
- }
+ } 
+ $formula_lowercase = strtolower($formula);
+ $formula_lowercase_replace = str_replace(" ", "", $formula_lowercase);
+ $count = mysql_query("SELECT COUNT(*) AS total FROM FORMULA WHERE REPLACE(LOWER(FORM_FORMULA), ' ', '') = '$formula_lowercase_replace' ");
+ $data=mysql_fetch_assoc($count);
  
- if(mysql_query("INSERT INTO FORMULA(FORM_NAME,FORM_DESC,FORM_FORMULA,USER_ID,CAT_ID) VALUES('$name','$desc','$formula','$uid','$catid')"))
- {
-  header("Location: /home.php");
- }
- else
- {
-  ?>
-        <script>alert('error while adding formula...');</script>
-        <?php
- }
+if ($data['total'] > 0)
+{
+?> 
+         <script>alert('formula already added');</script> 
+         <?php 
+}
+else
+{
+	 if(mysql_query("INSERT INTO FORMULA(FORM_NAME,FORM_DESC,FORM_FORMULA,USER_ID,CAT_ID) VALUES('$name','$desc','$formula','$uid','$catid')")) 
+ 	{ 
+ 	  header("Location: /home.php"); 
+ 	} 
+ 	 else 
+ 	{ 
+ 	  ?> 
+ 	        <script>alert('error while adding formula...');</script> 
+ 	        <?php 
+ 	} 
+}
 }
 
 ?>
