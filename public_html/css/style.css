@@ -74,6 +74,9 @@ a:focus {
 .navbar-default .navbar-nav>li>a:hover {
   color: #3b2412;
 }
+.navbar-right {
+  margin-right: 0;
+}
 
 .btn-primary {
   background-color: #633c1e;
