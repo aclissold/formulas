@@ -36,6 +36,17 @@ a:focus {
 }
 .navbar-default .navbar-brand {
   color: #633c1e;
+  border-right: 1px solid #c7b49d;
+  padding: 5px 16px;
+  font-size: 27px;
+}
+.navbar-default .navbar-brand-small {
+  padding: 7px 16px;
+}
+.navbar-default .navbar-brand:focus,
+.navbar-default .navbar-brand:hover {
+  background-color: #c7b49d;
+  color: #633c1e;
 }
 .navbar-default .navbar-toggle .icon-bar {
   background-color: #633c1e;
@@ -60,9 +71,7 @@ a:focus {
   color: #633c1e;
 }
 .navbar-default .navbar-nav>li>a:focus,
-.navbar-default .navbar-nav>li>a:hover,
-.navbar-default .navbar-brand:focus,
-.navbar-default .navbar-brand:hover {
+.navbar-default .navbar-nav>li>a:hover {
   color: #3b2412;
 }
 

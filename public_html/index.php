@@ -48,6 +48,7 @@ if(isset($_POST['btn-login']))
 
 	<link rel="stylesheet" href="css/style.css" type="text/css" />
 	<link rel="stylesheet" href="css/login.css" type="text/css" />
+	<link rel="stylesheet" href="css/katex.min.css" type="text/css" />
 </head>
 <body>
     <!-- Static navbar -->
@@ -60,7 +61,7 @@ if(isset($_POST['btn-login']))
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">f(ormulas)</a>
+          <a class="navbar-brand navbar-brand-small tex" href="#" data-expr="f">f</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
@@ -88,5 +89,12 @@ if(isset($_POST['btn-login']))
     <script src="js/bootstrap.min.js"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="js/ie10-viewport-bug-workaround.js"></script>
+
+    <!-- KaTeX -->
+    <script src="js/katex.min.js"></script>
+    <script src="js/main.js"></script>
+    <script type="text/javascript">
+      startup();
+    </script>
 </body>
 </html>
