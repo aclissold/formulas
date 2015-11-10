@@ -39,7 +39,7 @@ if(isset($_POST['btn-login']))
 	<script src="jquery-2.1.4.min.js"></script>
 
     <!-- Bootstrap core CSS -->
-    <link href="bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -47,8 +47,8 @@ if(isset($_POST['btn-login']))
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
 
-	<link rel="stylesheet" href="style.css" type="text/css" />
-	<link rel="stylesheet" href="login.css" type="text/css" />
+	<link rel="stylesheet" href="css/style.css" type="text/css" />
+	<link rel="stylesheet" href="css/login.css" type="text/css" />
 </head>
 <body>
     <!-- Static navbar -->
@@ -86,7 +86,7 @@ if(isset($_POST['btn-login']))
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <script src="bootstrap.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="ie10-viewport-bug-workaround.js"></script>
 </body>
