@@ -1,6 +1,6 @@
 /* Log in page */
 
-.form-signin {
+.form-login {
   width: 320px;
   height: 328px;
   position: absolute;
@@ -14,7 +14,7 @@
   border: 1px solid #c7b49d; /* tertiary */
   border-radius: 5px;
 }
-.form-signin .form-control {
+.form-login .form-control {
   position: relative;
   height: auto;
   -webkit-box-sizing: border-box;
@@ -23,15 +23,15 @@
   padding: 10px;
   font-size: 18px;
 }
-.form-signin .form-control:focus {
+.form-login .form-control:focus {
   z-index: 2;
 }
-.form-signin a {
+.form-login a {
   font-family: 'PT Serif', serif;
 }
-.form-signin input[type="password"] {
+.form-login input[type="password"] {
   margin-bottom: 54px;
 }
-.form-signin .btn-primary {
+.form-login .btn-primary {
   margin-bottom: 18px;
 }

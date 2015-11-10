@@ -72,7 +72,7 @@ if(isset($_POST['btn-login']))
     </nav>
 
     <div class="container">
-      <form class="form-signin" method="post">
+      <form class="form-login" method="post">
         <h2>Log in</h2>
         <input type="text" name="email" id="inputEmail" class="form-control" placeholder="email" required autofocus>
         <input type="password" name="pass" id="inputPassword" class="form-control" placeholder="password" required>
