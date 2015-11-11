@@ -76,8 +76,8 @@ if(isset($_POST['btn-signup']))
         <h2>Register</h2>
         <input type="text" name="uname" class="form-control" placeholder="username" required autofocus>
 		<input type="email" name="email" class="form-control" placeholder="email" required>
-        <input type="password" name="pass" class="form-control" placeholder="password" required>
-        <input type="password" name="pass2" class="form-control" placeholder="password (again)" required>
+        <input type="password" name="pass" id="pass1" class="form-control" placeholder="password" required>
+        <input type="password" name="pass2" id="pass2" class="form-control" placeholder="password (again)" required>
         <button class="btn btn-lg btn-primary btn-block" type="submit" name="btn-signup">Confirm</button>
       </form>
 
@@ -95,7 +95,11 @@ if(isset($_POST['btn-signup']))
     <script src="js/katex.min.js"></script>
     <script src="js/main.js"></script>
     <script type="text/javascript">
-      startup();
+      $.ready(function() {
+        startup();
+        document.getElementById("pass1").onchange = validate;
+        document.getElementById("pass2").onchange = validate;
+      }());
     </script>
 </body>
 </html>
