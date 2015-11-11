@@ -62,7 +62,7 @@ if(isset($_POST['btn-login']))
 
     <div class="container">
       <form class="form form-login" method="post">
-        <h2>Log in</h2>
+        <h2>Log In</h2>
         <input type="text" name="email" id="inputEmail" class="form-control" placeholder="email" required autofocus>
         <input type="password" name="pass" id="inputPassword" class="form-control" placeholder="password" required>
         <button class="btn btn-lg btn-primary btn-block" type="submit" name="btn-login">Log In</button>
