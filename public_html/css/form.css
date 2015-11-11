@@ -1,8 +1,8 @@
-/* Log in page */
+/* Log In, Register, and Add pages */
 
-.form-login {
+.form {
   width: 320px;
-  height: 328px;
+  height: 380px;
   position: absolute;
   top: 60px;
   bottom: 0;
@@ -10,11 +10,11 @@
   right: 0;
   margin: auto;
   padding: 15px;
-  background: #fcf5e3; /* primary */
-  border: 1px solid #c7b49d; /* tertiary */
+  background: #fcf5e3;
+  border: 1px solid #c7b49d;
   border-radius: 5px;
 }
-.form-login .form-control {
+.form .form-control {
   position: relative;
   height: auto;
   -webkit-box-sizing: border-box;
@@ -23,15 +23,28 @@
   padding: 10px;
   font-size: 18px;
 }
-.form-login .form-control:focus {
+.form .form-control:focus {
   z-index: 2;
 }
-.form-login a {
+.form a {
   font-family: 'PT Serif', serif;
+}
+.form .btn-primary {
+  margin-bottom: 18px;
+}
+
+.form-login {
+  width: 320px;
+  height: 328px;
 }
 .form-login input[type="password"] {
   margin-bottom: 54px;
 }
-.form-login .btn-primary {
-  margin-bottom: 18px;
+
+.form-register {
+  width: 320px;
+  height: 380px;
+}
+.form-register input[name="pass2"] {
+  margin-bottom: 54px;
 }

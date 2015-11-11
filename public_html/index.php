@@ -35,7 +35,7 @@ if(isset($_POST['btn-login']))
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<title>Formulas</title>
+	<title>Log In | Formulas</title>
 
     <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -47,7 +47,7 @@ if(isset($_POST['btn-login']))
     <![endif]-->
 
 	<link rel="stylesheet" href="css/style.css" type="text/css" />
-	<link rel="stylesheet" href="css/login.css" type="text/css" />
+	<link rel="stylesheet" href="css/form.css" type="text/css" />
 	<link rel="stylesheet" href="css/katex.min.css" type="text/css" />
     <link href='https://fonts.googleapis.com/css?family=PT+Serif' rel='stylesheet' type='text/css'>
 </head>
@@ -61,7 +61,7 @@ if(isset($_POST['btn-login']))
     </nav>
 
     <div class="container">
-      <form class="form-login" method="post">
+      <form class="form form-login" method="post">
         <h2>Log in</h2>
         <input type="text" name="email" id="inputEmail" class="form-control" placeholder="email" required autofocus>
         <input type="password" name="pass" id="inputPassword" class="form-control" placeholder="password" required>
