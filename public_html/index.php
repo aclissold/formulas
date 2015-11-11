@@ -49,7 +49,9 @@ if(isset($_POST['btn-login']))
 	<link rel="stylesheet" href="css/style.css" type="text/css" />
 	<link rel="stylesheet" href="css/login.css" type="text/css" />
 	<link rel="stylesheet" href="css/katex.min.css" type="text/css" />
+    <link href='https://fonts.googleapis.com/css?family=PT+Serif' rel='stylesheet' type='text/css'>
 </head>
+    <link href='https://fonts.googleapis.com/css?family=PT+Sans:400,700' rel='stylesheet' type='text/css'>
 <body>
     <!-- Static navbar -->
     <nav class="navbar navbar-default navbar-static-top">
