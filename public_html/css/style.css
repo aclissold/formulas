@@ -100,6 +100,12 @@ a:focus {
   -webkit-box-shadow: none;
   color: #633c1e;
 }
+textarea.form-control,
+textarea.form-control:focus {
+  background-color: white;
+  border: 1px solid #633c1e;
+  border-radius: 5px;
+}
 .form-control::-webkit-input-placeholder {
   color: #c7b49d;
 }
@@ -111,4 +117,16 @@ a:focus {
 }
 .form-control:-ms-input-placeholder {
   color: #c7b49d;
+}
+textarea.form-control::-webkit-input-placeholder {
+  color: #633c1e;
+}
+textarea.form-control:-moz-placeholder { /* Firefox 18- */
+  color: #633c1e;
+}
+textarea.form-control::-moz-placeholder {  /* Firefox 19+ */
+  color: #633c1e;
+}
+textarea.form-control:-ms-input-placeholder {
+  color: #633c1e;
 }

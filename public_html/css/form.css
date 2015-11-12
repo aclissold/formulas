@@ -48,3 +48,48 @@
 .form-register input[name="pass2"] {
   margin-bottom: 54px;
 }
+
+.form-add {
+  width: 320px;
+  height: 428px;
+}
+.form-add .description-textarea {
+  width: 100%;
+}
+.form-add .dropdown .btn-default {
+  color: #633c1e;
+  font-size: 18px;
+  text-align: left;
+  border-color: #633c1e;
+}
+.form-add .dropdown-menu {
+  border-color: #c7b49d;
+}
+.form-add .dropdown .btn-default:focus,
+.form-add .dropdown .btn-default:hover,
+.form-add .dropdown-menu>li>a:focus,
+.form-add .dropdown-menu>li>a:hover {
+  background-color: #f7f7f7;
+}
+.form-add .dropdown .btn-default,
+.form-add .dropdown-menu {
+  width: 100%;
+}
+.form-add .dropdown-menu li a {
+  color: #633c1e;
+  font-family: 'PT Sans', sans-serif;
+  font-size: 18px;
+}
+.form-add .dropdown-toggle {
+  margin: 8px 0;
+}
+.form-add textarea.form-control {
+  margin: 0 0 8px;
+  height: 136px;
+}
+.form-add .open>.dropdown-toggle.btn-default,
+.form-add .open>.dropdown-toggle.btn-default:focus,
+.form-add .open>.dropdown-toggle.btn-default:hover {
+  background-color: #c7b49d;
+  border-color: #633c1e;
+}
