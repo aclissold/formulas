@@ -40,9 +40,6 @@ a:focus {
   padding: 5px 16px;
   font-size: 27px;
 }
-.navbar-default .navbar-brand-small {
-  padding: 7px 16px;
-}
 .navbar-default .navbar-brand:focus,
 .navbar-default .navbar-brand:hover {
   background-color: #c7b49d;
@@ -74,8 +71,19 @@ a:focus {
 .navbar-default .navbar-nav>li>a:hover {
   color: #3b2412;
 }
+
 .navbar-right {
   margin-right: 0;
+}
+.user {
+  padding: 3.5px 0 0 8px;
+}
+.user li {
+  color: #633c1e;
+  font-size: 18px;
+}
+.user li a {
+  display: initial;
 }
 
 .btn-primary {
@@ -129,4 +137,9 @@ textarea.form-control::-moz-placeholder {  /* Firefox 19+ */
 }
 textarea.form-control:-ms-input-placeholder {
   color: #633c1e;
+}
+
+.albert {
+  margin-left: 8px;
+  margin-right: -8px;
 }

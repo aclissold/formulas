@@ -90,8 +90,14 @@ else
         <a class="navbar-brand navbar-brand-small tex" href="#" data-expr="f">f</a>
       </div>
       <div id="navbar" class="navbar-collapse collapse">
-        <ul class="nav navbar-nav navbar-right">
-          <li>Welcome, <?php echo $userRow['USER_NAME']; ?>&nbsp;<a href="logout.php?logout">Sign Out</a></li>
+        <ul class="user nav navbar-nav navbar-right">
+          <li>
+            <span><?php echo $userRow['USER_NAME']; ?></span>
+            <img alt="Albert" class="albert" src="img/albert.png" width="43" height="43"/>
+            <a href="logout.php?logout">
+              <span class="glyphicon glyphicon-log-out"/>
+            </a>
+          </li>
         </ul>
       </div><!--/.nav-collapse -->
     </nav>
