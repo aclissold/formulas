@@ -50,72 +50,114 @@ else
 
 ?>
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-
+<!DOCTYPE html>
+<html lang="en">
 <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<title>Formulas</title>
-	<link rel="stylesheet" href="style.css" type="text/css" />
-	<script src="jquery-2.1.4.min.js"></script>
+	<title>Add | Formulas</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+	<link rel="stylesheet" href="css/style.css" type="text/css" />
+	<link rel="stylesheet" href="css/form.css" type="text/css" />
+	<link rel="stylesheet" href="css/katex.min.css" type="text/css" />
+    <link href='https://fonts.googleapis.com/css?family=PT+Serif' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=PT+Sans:400,700' rel='stylesheet' type='text/css'>
 </head>
 
 <body>
-	<div id="header">
-		<div id="left">
-			<label>Formulas</label>
-		</div>
-		<div id="right">
-			<div id="content">
-				Welcome, <?php echo $userRow['USER_NAME']; ?>&nbsp;<a href="logout.php?logout">Sign Out</a>
-			</div>
-		</div>		
-	</div>
-	<div id="body" style="margin-bottom:100px">			
-		<center>
-			<div style="width: 80%; margin-top: 50px">
-				<table style="width:100%" class="category-table">
-					<tr style="background:#a5a5a5">
-						<td style="color:#ffffff">
-							<h2>Add New Formula</h2>
-						</td>
-					</tr>
-				</table>
-				<table style="width:100%"> 					
-					<tr>
-						<td>
-						<form method="post">
-							<h3 style="color:#a5a5a5; margin:5px 0 0 0">Name:</h3>
-							<input type="text" name="name" required>
-							<br>
-							<h3 style="color:#a5a5a5; margin:5px 0 0 0">Formula:</h3>
-							<input type="text" name="formula" required>
-							<br>
-							<h3 style="color:#a5a5a5; margin:5px 0 0 0">Category:</h3>
-							<input class="radio-button" type="radio" id="math" name="category" value="Math" checked>
-							Math
-							<input class="radio-button" type="radio" name="category" value="Physics">
-							Physics
-							<h3 style="color:#a5a5a5; margin:5px 0 0 0">Description:</h3>
-							<textarea class="description-textarea" name="description" required></textarea>	
-							<br>	
-							<tr>
-								<td class="cancel-button"><a href="/home.php"><button type="button" name="cancelAdd">Cancel</button></a></td>
-								<td class="save-button"> <button type="submit" name="add-formula">Save</button></td></td>
-							</tr>
-						</form>
-						</td>
-					</tr>					
-				</table>
-			</div>
-		</center>
-	</div>
-	<script>
-        $(document).ready(function() {
-            $('#cancelAdd').click(function(event){
-               $('#main-body').load('home.php');
-            });
-        });
-     </script>
+    <!-- Static navbar -->
+    <nav class="navbar navbar-default navbar-static-top">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand navbar-brand-small tex" href="home.php" data-expr="f(ormulas)">f(ormulas)</a>
+      </div>
+      <div id="navbar" class="navbar-collapse collapse">
+        <ul class="user nav navbar-nav navbar-right">
+          <li>
+            <span><?php echo $userRow['USER_NAME']; ?></span>
+            <img alt="Albert" class="albert" src="img/albert.png" width="43" height="43"/>
+            <a href="logout.php?logout">
+              <span class="glyphicon glyphicon-log-out"/>
+            </a>
+          </li>
+        </ul>
+      </div><!--/.nav-collapse -->
+    </nav>
+
+    <div class="container">
+      <form class="form form-add" method="post">
+        <h2>Add a Formula</h2>
+        <input type="text" name="name" class="form-control" placeholder="name" required autofocus>
+        <input type="text" name="formula" class="form-control" placeholder="formula" required>
+
+        <div class="dropdown">
+          <button class="btn btn-default dropdown-toggle" type="button" id="categoryDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+            category
+            <span class="caret"></span>
+          </button>
+          <input type="hidden" name="category" id="category" value="Math">
+          <ul class="dropdown-menu" aria-labelledby="categoryDropdown">
+            <li>
+              <a href="#" onclick="mathSelected()">math
+                <span id="mathCheckmark" class="pull-right glyphicon glyphicon-ok" aria-hidden="true"></span>
+              </a>
+            </li>
+            <li>
+              <a href="#" onclick="physicsSelected()">physics
+                <span id="physicsCheckmark" class="pull-right hidden glyphicon glyphicon-ok" aria-hidden="true"></span>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <textarea class="form-control" name="description" placeholder="Enter a detailed description of the formula here…" required></textarea>
+        <button class="btn btn-lg btn-primary btn-block" type="submit" name="add-formula">Add</button>
+      </form>
+    </div> <!-- /container -->
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="js/jquery-1.11.3.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="js/ie10-viewport-bug-workaround.js"></script>
+
+    <!-- KaTeX -->
+    <script src="js/katex.min.js"></script>
+    <script src="js/main.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function() {
+        startup();
+      });
+      var mathSelected = function() {
+        $('#category').val('Math');
+        $('#mathCheckmark').removeClass('hidden');
+        $('#physicsCheckmark').addClass('hidden');
+      };
+      var physicsSelected = function() {
+        $('#category').val('Physics')
+        $('#mathCheckmark').addClass('hidden');
+        $('#physicsCheckmark').removeClass('hidden');
+      }
+    </script>
 </body>
 </html>

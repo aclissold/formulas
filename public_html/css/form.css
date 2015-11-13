@@ -1,0 +1,95 @@
+/* Log In, Register, and Add pages */
+
+.form {
+  width: 320px;
+  height: 380px;
+  position: absolute;
+  top: 60px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  padding: 15px;
+  background: #fcf5e3;
+  border: 1px solid #c7b49d;
+  border-radius: 5px;
+}
+.form .form-control {
+  position: relative;
+  height: auto;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 10px;
+  font-size: 18px;
+}
+.form .form-control:focus {
+  z-index: 2;
+}
+.form a {
+  font-family: 'PT Serif', serif;
+}
+.form .btn-primary {
+  margin-bottom: 18px;
+}
+
+.form-login {
+  width: 320px;
+  height: 328px;
+}
+.form-login input[type="password"] {
+  margin-bottom: 54px;
+}
+
+.form-register {
+  width: 320px;
+  height: 380px;
+}
+.form-register input[name="pass2"] {
+  margin-bottom: 54px;
+}
+
+.form-add {
+  width: 320px;
+  height: 428px;
+}
+.form-add .description-textarea {
+  width: 100%;
+}
+.form-add .dropdown .btn-default {
+  color: #633c1e;
+  font-size: 18px;
+  text-align: left;
+  border-color: #633c1e;
+}
+.form-add .dropdown-menu {
+  border-color: #c7b49d;
+}
+.form-add .dropdown .btn-default:focus,
+.form-add .dropdown .btn-default:hover,
+.form-add .dropdown-menu>li>a:focus,
+.form-add .dropdown-menu>li>a:hover {
+  background-color: #f7f7f7;
+}
+.form-add .dropdown .btn-default,
+.form-add .dropdown-menu {
+  width: 100%;
+}
+.form-add .dropdown-menu li a {
+  color: #633c1e;
+  font-family: 'PT Sans', sans-serif;
+  font-size: 18px;
+}
+.form-add .dropdown-toggle {
+  margin: 8px 0;
+}
+.form-add textarea.form-control {
+  margin: 0 0 8px;
+  height: 136px;
+}
+.form-add .open>.dropdown-toggle.btn-default,
+.form-add .open>.dropdown-toggle.btn-default:focus,
+.form-add .open>.dropdown-toggle.btn-default:hover {
+  background-color: #c7b49d;
+  border-color: #633c1e;
+}

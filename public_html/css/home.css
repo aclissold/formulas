@@ -1,0 +1,95 @@
+.add-your-own-button {
+  float: right;
+  margin-right: -8px;
+}
+
+.navbar {
+  margin-bottom: 0;
+}
+
+.carousel-caption {
+  bottom: 36%;
+  color: #633c1e;
+  text-shadow: 1px 1px 2px #4a2d16;
+}
+.carousel .item {
+  background-color: #f7f7f7;
+}
+.carousel-indicators li {
+  border: 1px solid #633c1e;
+}
+.carousel-indicators .active {
+  background-color: #633c1e;
+}
+.carousel .glyphicon-chevron-left,
+.carousel .glyphicon-chevron-right {
+  color: #633c1e;
+}
+.carousel-control.left {
+  background-image: -webkit-linear-gradient(right, rgba(252, 245, 226, 0), rgba(252, 245, 226, 1));
+  background-image:      -o-linear-gradient(right, rgba(252, 245, 226, 0), rgba(252, 245, 226, 1));
+  background-image:         linear-gradient(to left, rgba(252, 245, 226, 0), rgba(252, 245, 226, 1));
+}
+.carousel-control.right {
+  background-image: -webkit-linear-gradient(left, rgba(252, 245, 226, 0), rgba(252, 245, 226, 1));
+  background-image:      -o-linear-gradient(left, rgba(252, 245, 226, 0), rgba(252, 245, 226, 1));
+  background-image:         linear-gradient(to right, rgba(252, 245, 226, 0), rgba(252, 245, 226, 1));
+}
+.carousel-control.left:focus,
+.carousel-control.left:hover {
+  background-image: -webkit-linear-gradient(right, rgba(99, 60, 30, 0), rgba(99, 60, 30, 0.5));
+  background-image:      -o-linear-gradient(right, rgba(99, 60, 30, 0), rgba(99, 60, 30, 0.5));
+  background-image:         linear-gradient(to left, rgba(99, 60, 30, 0), rgba(99, 60, 30, 0.5));
+}
+.carousel-control.right:focus,
+.carousel-control.right:hover {
+  background-image: -webkit-linear-gradient(left, rgba(99, 60, 30, 0), rgba(99, 60, 30, 0.5));
+  background-image:      -o-linear-gradient(left, rgba(99, 60, 30, 0), rgba(99, 60, 30, 0.5));
+  background-image:         linear-gradient(to right, rgba(99, 60, 30, 0), rgba(99, 60, 30, 0.5));
+}
+.carousel-control {
+  opacity: 1;
+}
+.carousel-control:focus,
+.carousel-control:hover {
+  opacity: 1;
+
+}
+
+.input-group {
+  display: block;
+  width: 222px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.table-striped {
+  width: 100%;
+}
+.table-striped .btn-link {
+  float: right;
+}
+
+#allButton {
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+#physicsButton {
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+@media screen and (max-width:767px) {
+  .row-text {
+    font-size: 18px;
+  }
+  .spotlight {
+    font-size: 18px;
+  }
+}
+
+@media (min-width:1200px) {
+  .spotlight {
+    font-size: 48px;
+}
