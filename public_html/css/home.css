@@ -88,3 +88,8 @@
     font-size: 18px;
   }
 }
+
+@media (min-width:1200px) {
+  .spotlight {
+    font-size: 48px;
+}
