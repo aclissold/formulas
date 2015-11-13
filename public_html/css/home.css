@@ -26,14 +26,34 @@
   color: #633c1e;
 }
 .carousel-control.left {
-    background-image: -webkit-linear-gradient(right,rgba(0,0,0,.0001) 0, #FCF5E3 100%);
-    background-image:      -o-linear-gradient(right,rgba(0,0,0,.0001) 0, #FCF5E3 100%);
-    background-image:         linear-gradient(to left,rgba(0,0,0,.0001) 0, #FCF5E3 100%);
+  background-image: -webkit-linear-gradient(right, rgba(252, 245, 226, 0), rgba(252, 245, 226, 1));
+  background-image:      -o-linear-gradient(right, rgba(252, 245, 226, 0), rgba(252, 245, 226, 1));
+  background-image:         linear-gradient(to left, rgba(252, 245, 226, 0), rgba(252, 245, 226, 1));
 }
 .carousel-control.right {
-    background-image: -webkit-linear-gradient(left,rgba(0,0,0,.0001) 0, #FCF5E3 100%);
-    background-image:      -o-linear-gradient(left,rgba(0,0,0,.0001) 0, #FCF5E3 100%);
-    background-image:         linear-gradient(to right,rgba(0,0,0,.0001) 0, #FCF5E3 100%);
+  background-image: -webkit-linear-gradient(left, rgba(252, 245, 226, 0), rgba(252, 245, 226, 1));
+  background-image:      -o-linear-gradient(left, rgba(252, 245, 226, 0), rgba(252, 245, 226, 1));
+  background-image:         linear-gradient(to right, rgba(252, 245, 226, 0), rgba(252, 245, 226, 1));
+}
+.carousel-control.left:focus,
+.carousel-control.left:hover {
+  background-image: -webkit-linear-gradient(right, rgba(99, 60, 30, 0), rgba(99, 60, 30, 0.5));
+  background-image:      -o-linear-gradient(right, rgba(99, 60, 30, 0), rgba(99, 60, 30, 0.5));
+  background-image:         linear-gradient(to left, rgba(99, 60, 30, 0), rgba(99, 60, 30, 0.5));
+}
+.carousel-control.right:focus,
+.carousel-control.right:hover {
+  background-image: -webkit-linear-gradient(left, rgba(99, 60, 30, 0), rgba(99, 60, 30, 0.5));
+  background-image:      -o-linear-gradient(left, rgba(99, 60, 30, 0), rgba(99, 60, 30, 0.5));
+  background-image:         linear-gradient(to right, rgba(99, 60, 30, 0), rgba(99, 60, 30, 0.5));
+}
+.carousel-control {
+  opacity: 1;
+}
+.carousel-control:focus,
+.carousel-control:hover {
+  opacity: 1;
+
 }
 
 .input-group {
@@ -62,6 +82,9 @@
 
 @media screen and (max-width:767px) {
   .row-text {
+    font-size: 18px;
+  }
+  .spotlight {
     font-size: 18px;
   }
 }
