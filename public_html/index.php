@@ -56,7 +56,7 @@ if(isset($_POST['btn-login']))
     <!-- Static navbar -->
     <nav class="navbar navbar-default navbar-static-top">
       <div class="navbar-header">
-        <a class="navbar-brand navbar-brand-small tex" href="#" data-expr="f">f</a>
+        <a class="navbar-brand navbar-brand-small tex" href="home.php" data-expr="f">f</a>
       </div>
     </nav>
 
