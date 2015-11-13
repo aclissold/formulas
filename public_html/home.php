@@ -48,79 +48,116 @@ if(isset($_POST['delete'])){
 
 ?>
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<title>Formulas</title>
-	<link rel="stylesheet" href="style.css" type="text/css" />
-	<script src="jquery-2.1.4.min.js"></script>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+	<link rel="stylesheet" href="css/style.css" type="text/css" />
+	<link rel="stylesheet" href="css/home.css" type="text/css" />
+	<link rel="stylesheet" href="css/katex.min.css" type="text/css" />
+    <link href='https://fonts.googleapis.com/css?family=PT+Serif' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=PT+Sans:400,700' rel='stylesheet' type='text/css'>
 </head>
 
-<body id="main-body">
-	<div id="header">
-		<div id="left">
-			<label>Formulas</label>
-		</div>
-		<div id="right">
-			<div id="content">
-				Welcome, <?php echo $userRow['USER_NAME']; ?>&nbsp;<a href="logout.php?logout">Sign Out</a>
-			</div>
-		</div>		
-	</div>
-	<div id="body" style="margin-bottom:100px">		
-		<center>
-			<div id="formula-table" style="width: 80%; margin-top: 50px">
-				<table style="width:100%" class="category-table">
-					<tr style="width:100%">
-						<form method="post">
-							<td style="width:15%"><button class="category-button" onclick="changeColor()" type="submit" name="all">All (<?php echo mysql_result($count_all,0) ?>)</button></td>
-						</form>
-						<form method="post">
-							<td style="width:15%"><button class="category-button" type="submit" name="math">Math (<?php echo mysql_result($count_math,0) ?>)</a></h2></td>
-						</form>
-						<form method="post">
-							<td style="width:15%"><h2><button class="category-button" type="submit" name="physics">Physics (<?php echo mysql_result($count_physics,0) ?>)</a></h2></td>
-						</form>
-						<form method="post">
-							<td><button class="add-new-button" type="submit" name="add-new">Add New</button></td>
-						</form>
-					</tr>
-				</table>				
-				<table >
-					<tr style="background:#a5a5a5">
-						<td style="color:#ffffff"><b>Name</b></td>
-						<td style="color:#ffffff"><b>Formula</b></td>
-						<td style="color:#ffffff"><b>Category</b></td>
-						<td style="color:#ffffff"><b></b></td>
-					</tr>
-					<?php while($row = mysql_fetch_array($result)) : ?>
-					<tr>
-						<td style="width:30%"><h1><a href='details.php?FORM_ID=<?php echo $row['FORM_ID']; ?>'><?php echo $row['FORM_NAME']; ?></a></h1></td>
-						<td style="width:50%"><h1 style="color:#a5a5a5;"><?php echo $row['FORM_FORMULA']; ?></h1></td>
-						<td style="width:20%"><h2 style="color:#a5a5a5;"><?php echo $row['CATEGORYNAME']; ?></h2></td>
-						<?php
-						if(13 == $_SESSION['user']) {
-						?>
-							<form method="post">
-								<td><button class="delete-formula" type="submit" name="delete" value="<? echo $row['FORM_ID']; ?>" >Delete</button></td>
-							</form>
-						<?php 
-						} 
-						else if($row['USER_ID'] == $_SESSION['user']){
-						?>
-							<form method="post">
-								<td><button class="delete-formula" type="submit" name="delete" value="<? echo $row['FORM_ID']; ?>" >Delete</button></td>
-							</form>
-						<?php
-						}
-						?>
-					</tr>
-					<?php endwhile; ?>
-				</table>
-			</div>
-		</center>
-	</div>
+<body>
+    <!-- Static navbar -->
+    <nav class="navbar navbar-default navbar-static-top">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand navbar-brand-small tex" href="home.php" data-expr="f(ormulas)">f(ormulas)</a>
+      </div>
+      <div id="navbar" class="navbar-collapse collapse">
+        <ul class="user nav navbar-nav navbar-right">
+          <li>
+            <span><?php echo $userRow['USER_NAME']; ?></span>
+            <img alt="Albert" class="albert" src="img/albert.png" width="43" height="43"/>
+            <a href="logout.php?logout">
+              <span class="glyphicon glyphicon-log-out"/>
+            </a>
+          </li>
+        </ul>
+      </div><!--/.nav-collapse -->
+    </nav>
+
+    <div class="container">
+      <form method="post">
+        <button class="category-button" onclick="changeColor()" type="submit" name="all">All (<?php echo mysql_result($count_all,0) ?>)</button>
+      </form>
+      <form method="post">
+        <button class="category-button" type="submit" name="math">Math (<?php echo mysql_result($count_math,0) ?>)</button>
+      </form>
+      <form method="post">
+        <button class="category-button" type="submit" name="physics">Physics (<?php echo mysql_result($count_physics,0) ?>)</button>
+      </form>
+      <table class="table-striped">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Formula</th>
+            <th>Category</th>
+            <th>
+              <form method="post">
+                <button class="btn btn-default add-your-own-button" type="submit" name="add-new">Add Your Own! +</button>
+              </form>
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <?php while($row = mysql_fetch_array($result)) : ?>
+          <tr>
+            <td><a href='details.php?FORM_ID=<?php echo $row['FORM_ID']; ?>' class="row-text"><?php echo $row['FORM_NAME']; ?></a></td>
+            <td><div class="row-text tex" data-expr="<?php echo $row['FORM_FORMULA']; ?>"></div></td>
+            <td><div class="row-text"><?php echo $row['CATEGORYNAME']; ?></div></td>
+            <td>
+              <form method="post">
+                  <button class="btn btn-link" type="submit" name="delete" value="<?php echo $row['FORM_ID']; ?>">
+                    <span class="glyphicon glyphicon-remove"/>
+                  </button>
+              </form>
+            </td>
+          </tr>
+          <?php endwhile; ?>
+        </tbody>
+      </table>
+    </div> <!-- /container -->
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="js/jquery-1.11.3.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="js/ie10-viewport-bug-workaround.js"></script>
+
+    <!-- KaTeX -->
+    <script src="js/katex.min.js"></script>
+    <script src="js/main.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function() {
+        startup();
+      });
+    </script>
 </body>
 </html>
