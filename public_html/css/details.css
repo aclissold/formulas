@@ -1,0 +1,20 @@
+.formula {
+  color: #633c1e;
+  font-size: 64px;
+  text-align: center;
+}
+
+.formula-description {
+  font-size: 27px;
+  color: #633c1e;
+}
+
+@media screen and (max-width:767px) {
+  .formula {
+    font-size: 32px;
+  }
+
+  .formula-description {
+    font-size: 18px;
+  }
+}

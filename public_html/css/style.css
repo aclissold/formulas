@@ -139,6 +139,23 @@ textarea.form-control:-ms-input-placeholder {
   color: #633c1e;
 }
 
+.well {
+  background-color: #fcf5e3;
+  border-radius: 5px;
+  border: 1px solid #c7b49d;
+  padding: 16px;
+  margin: 42px 0;
+}
+.well h1 {
+  color: #633c1e;
+  font-size: 27px;
+  font-weight: normal;
+}
+.well .caption {
+  color: #633c1e;
+  text-align: right;
+}
+
 .albert {
   margin-left: 8px;
   margin-right: -8px;
