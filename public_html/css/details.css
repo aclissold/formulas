@@ -9,6 +9,23 @@
   color: #633c1e;
 }
 
+.category {
+  width: 43px;
+  height: 43px;
+  float: right;
+  background-color: #c7b49d;
+  border: 2px solid #633c1e;
+  border-radius: 50%;
+  margin-top: -53px;
+}
+.category .tex {
+  color: #633c1e;
+  font-size: 24px;
+  margin-top: -2px;
+  margin-left: 2px;
+  text-align: center;
+}
+
 @media screen and (max-width:767px) {
   .formula {
     font-size: 32px;

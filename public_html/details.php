@@ -73,7 +73,19 @@ $formulaRow=mysql_fetch_array($result);
     <div class="container">
       <div class="well">
           <h1><?php echo $formulaRow['FORM_NAME']; ?></h1>
-          <div class="category"><?php echo $formulaRow['CATEGORYNAME']; ?></div>
+          <div class="category">
+            <div class="tex" data-expr="<?php
+              if ($formulaRow['CATEGORYNAME'] == "Math"){
+                echo "m";
+              }
+              else if ($formulaRow['CATEGORYNAME'] == "Physics"){
+                echo "p";
+              }
+              else{
+                echo "?";
+              }
+            ?>"></div>
+          </div>
           <div class="formula tex" data-expr="<?php echo $formulaRow['FORM_FORMULA']; ?>"></div>
           <div class="caption">
             added by <?php echo $formulaRow['USERNAME']; ?>
