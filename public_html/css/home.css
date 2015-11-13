@@ -1,20 +1,13 @@
 .add-your-own-button {
   float: right;
   margin-right: -8px;
-  border-color: #633c1e;
-  color: #633c1e;
 }
-.add-your-own-button:focus,
-.add-your-own-button:hover {
-  background-color: #fcf5e3;
-  border-color: #633c1e;
-}
-.add-your-own-button:active,
-.add-your-own-button:active:focus,
-.add-your-own-button:active:hover {
-  background-color: #633c1e;
-  border-color: #633c1e;
-  color: white;
+
+.input-group {
+  display: block;
+  width: 222px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .table-striped {
@@ -22,6 +15,16 @@
 }
 .table-striped .btn-link {
   float: right;
+}
+
+#allButton {
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+#physicsButton {
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
 }
 
 @media screen and (max-width:767px) {

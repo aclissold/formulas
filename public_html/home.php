@@ -101,16 +101,24 @@ if(isset($_POST['delete'])){
       </div><!--/.nav-collapse -->
     </nav>
 
+    <div class="input-group">
+      <div class="input-group-btn">
+        <button type="button" id="allButton" class="btn btn-default
+          <?php if(!isset($_POST['math']) && !isset($_POST['physics'])) { echo 'active'; }?>">
+          <span>All (<?php echo mysql_result($count_all,0) ?>)</span>
+        </button>
+        <button type="button" id="mathButton" class="btn btn-default
+          <?php if(isset($_POST['math'])) { echo 'active'; }?>">
+          <span>Math (<?php echo mysql_result($count_math,0) ?>)</span>
+        </button>
+        <button type="button" id="physicsButton" class="btn btn-default
+          <?php if(isset($_POST['physics'])) { echo 'active'; }?>">
+          <span>Physics (<?php echo mysql_result($count_physics,0) ?>)</span>
+        </button>
+      </div>
+    </div>
+
     <div class="container">
-      <form method="post">
-        <button class="category-button" onclick="changeColor()" type="submit" name="all">All (<?php echo mysql_result($count_all,0) ?>)</button>
-      </form>
-      <form method="post">
-        <button class="category-button" type="submit" name="math">Math (<?php echo mysql_result($count_math,0) ?>)</button>
-      </form>
-      <form method="post">
-        <button class="category-button" type="submit" name="physics">Physics (<?php echo mysql_result($count_physics,0) ?>)</button>
-      </form>
       <table class="table-striped">
         <thead>
           <tr>
@@ -157,6 +165,42 @@ if(isset($_POST['delete'])){
     <script type="text/javascript">
       $(document).ready(function() {
         startup();
+        $('#allButton').click(function() {
+          var form = document.createElement('form');
+          form.method = 'post';
+          var input = document.createElement('input');
+          input.type = 'hidden';
+          input.name = 'all';
+          input.value = '';
+          form.appendChild(input);
+          document.body.appendChild(form);
+          form.submit();
+          return false;
+        });
+        $('#mathButton').click(function() {
+          var form = document.createElement('form');
+          form.method = 'post';
+          var input = document.createElement('input');
+          input.type = 'hidden';
+          input.name = 'math';
+          input.value = '';
+          form.appendChild(input);
+          document.body.appendChild(form);
+          form.submit();
+          return false;
+        });
+        $('#physicsButton').click(function() {
+          var form = document.createElement('form');
+          form.method = 'post';
+          var input = document.createElement('input');
+          input.type = 'hidden';
+          input.name = 'physics';
+          input.value = '';
+          form.appendChild(input);
+          document.body.appendChild(form);
+          form.submit();
+          return false;
+        });
       });
     </script>
 </body>
