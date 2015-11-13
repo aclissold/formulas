@@ -69,6 +69,7 @@ if(isset($_POST['delete'])){
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
 
+    <link rel="stylesheet" href="css/carousel.css" type="text/css" />
 	<link rel="stylesheet" href="css/style.css" type="text/css" />
 	<link rel="stylesheet" href="css/home.css" type="text/css" />
 	<link rel="stylesheet" href="css/katex.min.css" type="text/css" />
@@ -101,6 +102,49 @@ if(isset($_POST['delete'])){
       </div><!--/.nav-collapse -->
     </nav>
 
+    <!-- Carousel
+    ================================================== -->
+    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+      <!-- Indicators -->
+      <ol class="carousel-indicators">
+        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#myCarousel" data-slide-to="1"></li>
+        <li data-target="#myCarousel" data-slide-to="2"></li>
+      </ol>
+      <div class="carousel-inner" role="listbox">
+        <div class="item active">
+          <div class="container">
+            <div class="carousel-caption">
+              <h1 class="spotlight tex" data-expr="E=mc^2"></h1>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="container">
+            <div class="carousel-caption">
+              <h1 class="spotlight tex" data-expr="e =  \displaystyle\sum\limits_{n = 0}^{ \infty} \dfrac{1}{n!} = 1 + \frac{1}{1} + \frac{1}{1\cdot 2} + \cdots"></h1>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="container">
+            <div class="carousel-caption">
+              <h1 class="spotlight tex" data-expr="f(x) = \int_{-\infty}^\infty \hat f(\xi)\,e^{2 \pi i \xi x} \,d\xi"></h1>
+            </div>
+          </div>
+        </div>
+      </div>
+      <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div><!-- /.carousel -->
+
+    <!-- Category Picker -->
     <div class="input-group">
       <div class="input-group-btn">
         <button type="button" id="allButton" class="btn btn-default
@@ -116,7 +160,7 @@ if(isset($_POST['delete'])){
           <span>Physics (<?php echo mysql_result($count_physics,0) ?>)</span>
         </button>
       </div>
-    </div>
+    </div><!-- /category picker -->
 
     <div class="container">
       <table class="table-striped">
@@ -159,7 +203,6 @@ if(isset($_POST['delete'])){
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="js/ie10-viewport-bug-workaround.js"></script>
 
-    <!-- KaTeX -->
     <script src="js/katex.min.js"></script>
     <script src="js/main.js"></script>
     <script type="text/javascript">

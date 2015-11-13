@@ -3,6 +3,39 @@
   margin-right: -8px;
 }
 
+.navbar {
+  margin-bottom: 0;
+}
+
+.carousel-caption {
+  bottom: 36%;
+  color: #633c1e;
+  text-shadow: 1px 1px 2px #4a2d16;
+}
+.carousel .item {
+  background-color: #f7f7f7;
+}
+.carousel-indicators li {
+  border: 1px solid #633c1e;
+}
+.carousel-indicators .active {
+  background-color: #633c1e;
+}
+.carousel .glyphicon-chevron-left,
+.carousel .glyphicon-chevron-right {
+  color: #633c1e;
+}
+.carousel-control.left {
+    background-image: -webkit-linear-gradient(right,rgba(0,0,0,.0001) 0, #FCF5E3 100%);
+    background-image:      -o-linear-gradient(right,rgba(0,0,0,.0001) 0, #FCF5E3 100%);
+    background-image:         linear-gradient(to left,rgba(0,0,0,.0001) 0, #FCF5E3 100%);
+}
+.carousel-control.right {
+    background-image: -webkit-linear-gradient(left,rgba(0,0,0,.0001) 0, #FCF5E3 100%);
+    background-image:      -o-linear-gradient(left,rgba(0,0,0,.0001) 0, #FCF5E3 100%);
+    background-image:         linear-gradient(to right,rgba(0,0,0,.0001) 0, #FCF5E3 100%);
+}
+
 .input-group {
   display: block;
   width: 222px;
