@@ -62,7 +62,7 @@ if(isset($_POST['btn-signup']))
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand navbar-brand-small tex" href="home.php" data-expr="f">f</a>
+        <a class="navbar-brand navbar-brand-small tex" href="home.php" data-expr="f(ormulas)">f(ormulas)</a>
       </div>
       <div id="navbar" class="navbar-collapse collapse">
         <ul class="nav navbar-nav navbar-right">

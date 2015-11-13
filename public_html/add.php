@@ -87,7 +87,7 @@ else
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand navbar-brand-small tex" href="home.php" data-expr="f">f</a>
+        <a class="navbar-brand navbar-brand-small tex" href="home.php" data-expr="f(ormulas)">f(omulas)</a>
       </div>
       <div id="navbar" class="navbar-collapse collapse">
         <ul class="user nav navbar-nav navbar-right">

@@ -37,7 +37,7 @@ a:focus {
 .navbar-default .navbar-brand {
   color: #633c1e;
   border-right: 1px solid #c7b49d;
-  padding: 5px 16px;
+  padding: 5px 8px;
   font-size: 27px;
 }
 .navbar-default .navbar-brand:focus,
