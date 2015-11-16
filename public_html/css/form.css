@@ -100,3 +100,10 @@
   background-color: #c7b49d;
   border-color: #633c1e;
 }
+
+#formulaOutput {
+  color: #633c1e;
+  font-size: 36px;
+  margin-top: 16px;
+  text-align: center;
+}

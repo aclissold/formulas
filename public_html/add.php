@@ -107,7 +107,7 @@ else
       <form class="form form-add" method="post">
         <h2>Add a Formula</h2>
         <input type="text" name="name" class="form-control" placeholder="name" required autofocus>
-        <input type="text" name="formula" class="form-control" placeholder="formula" required>
+        <input type="text" id="formulaInput" name="formula" class="form-control" placeholder="formula" required>
 
         <div>
           <div class="label">category:</div>
@@ -137,6 +137,8 @@ else
       </form>
     </div> <!-- /container -->
 
+    <div id="formulaOutput"><span class="katex"></span></div>
+
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
@@ -164,6 +166,17 @@ else
         $('#mathCheckmark').addClass('hidden');
         $('#physicsCheckmark').removeClass('hidden');
       }
+      var formulaInput = document.getElementById('formulaInput');
+      var formulaOutput = document.getElementById('formulaOutput');
+
+      function renderFormula() {
+        console.log("called");
+        katex.render("\\displaystyle{" + formulaInput.value + "}", formulaOutput);
+      }
+
+      formulaInput.addEventListener("input", function() {
+        renderFormula();
+      });
     </script>
 </body>
 </html>
