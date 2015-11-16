@@ -130,7 +130,6 @@ if(isset($_POST['delete'])){
         <div class="item">
           <div class="container">
             <div class="carousel-caption">
-              <!-- <h1 class="spotlight tex" data-expr="f(x) = \int_{-\infty}^\infty \hat f(\xi)\,e^{2 \pi i \xi x} \,d\xi"></h1> -->
 			  <h1 class="spotlight tex" data-expr="A+b=c"></h1>
             </div>
           </div>
