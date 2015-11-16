@@ -36,6 +36,7 @@ if(isset($_POST['btn-signup']))
 
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<title>Register | Formulas</title>
+    <link href="favicon.ico" rel="shortcut icon">
 
     <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
