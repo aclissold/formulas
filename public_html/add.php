@@ -60,6 +60,7 @@ else
 
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<title>Add | Formulas</title>
+    <link href="favicon.ico" rel="shortcut icon">
 
     <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
