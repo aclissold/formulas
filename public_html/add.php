@@ -109,24 +109,27 @@ else
         <input type="text" name="name" class="form-control" placeholder="name" required autofocus>
         <input type="text" name="formula" class="form-control" placeholder="formula" required>
 
-        <div class="dropdown">
-          <button class="btn btn-default dropdown-toggle" type="button" id="categoryDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-            category
-            <span class="caret"></span>
-          </button>
-          <input type="hidden" name="category" id="category" value="Math">
-          <ul class="dropdown-menu" aria-labelledby="categoryDropdown">
-            <li>
-              <a href="#" onclick="mathSelected()">math
-                <span id="mathCheckmark" class="pull-right glyphicon glyphicon-ok" aria-hidden="true"></span>
-              </a>
-            </li>
-            <li>
-              <a href="#" onclick="physicsSelected()">physics
-                <span id="physicsCheckmark" class="pull-right hidden glyphicon glyphicon-ok" aria-hidden="true"></span>
-              </a>
-            </li>
-          </ul>
+        <div>
+          <div class="label">category:</div>
+          <div class="dropdown">
+            <button class="btn btn-default dropdown-toggle" type="button" id="categoryDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+              <span id="categoryDropdownSelection">math</span>
+              <span class="caret"></span>
+            </button>
+            <input type="hidden" name="category" id="category" value="Math">
+            <ul class="dropdown-menu" aria-labelledby="categoryDropdown">
+              <li>
+                <a href="#" onclick="mathSelected()">math
+                  <span id="mathCheckmark" class="pull-right glyphicon glyphicon-ok" aria-hidden="true"></span>
+                </a>
+              </li>
+              <li>
+                <a href="#" onclick="physicsSelected()">physics
+                  <span id="physicsCheckmark" class="pull-right hidden glyphicon glyphicon-ok" aria-hidden="true"></span>
+                </a>
+              </li>
+            </ul>
+          </div>
         </div>
 
         <textarea class="form-control" name="description" placeholder="Enter a detailed description of the formula here…" required></textarea>
@@ -151,11 +154,13 @@ else
       });
       var mathSelected = function() {
         $('#category').val('Math');
+        $('#categoryDropdownSelection').text('math');
         $('#mathCheckmark').removeClass('hidden');
         $('#physicsCheckmark').addClass('hidden');
       };
       var physicsSelected = function() {
         $('#category').val('Physics')
+        $('#categoryDropdownSelection').text('physics');
         $('#mathCheckmark').addClass('hidden');
         $('#physicsCheckmark').removeClass('hidden');
       }

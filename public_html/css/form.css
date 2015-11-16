@@ -56,6 +56,13 @@
 .form-add .description-textarea {
   width: 100%;
 }
+.form-add .label {
+  float: left;
+  color: #633c1e;
+  font-size: 18px;
+  margin-top: 15px;
+  font-weight: normal;
+}
 .form-add .dropdown .btn-default {
   color: #633c1e;
   font-size: 18px;
@@ -64,6 +71,7 @@
 }
 .form-add .dropdown-menu {
   border-color: #c7b49d;
+  margin-left: 90px;
 }
 .form-add .dropdown .btn-default:focus,
 .form-add .dropdown .btn-default:hover,
@@ -73,7 +81,7 @@
 }
 .form-add .dropdown .btn-default,
 .form-add .dropdown-menu {
-  width: 100%;
+  width: 196px;
 }
 .form-add .dropdown-menu li a {
   color: #633c1e;
