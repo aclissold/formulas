@@ -116,6 +116,13 @@ if(isset($_POST['delete'])){
         <div class="item active">
           <div class="container">
             <div class="carousel-caption">
+              <h1 class="spotlight tex" data-expr="a^2+b^2=c^2"></h1>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="container">
+            <div class="carousel-caption">
               <h1 class="spotlight tex" data-expr="E=mc^2"></h1>
             </div>
           </div>
@@ -123,15 +130,7 @@ if(isset($_POST['delete'])){
         <div class="item">
           <div class="container">
             <div class="carousel-caption">
-              <!-- <h1 class="spotlight tex" data-expr="e =  \displaystyle\sum\limits_{n = 0}^{ \infty} \dfrac{1}{n!} = 1 + \frac{1}{1} + \frac{1}{1\cdot 2} + \cdots"></h1> -->
-			  <h1 class="spotlight tex" data-expr="x*y=z"></h1>
-            </div>
-          </div>
-        </div>
-        <div class="item">
-          <div class="container">
-            <div class="carousel-caption">
-			  <h1 class="spotlight tex" data-expr="A+b=c"></h1>
+              <h1 class="spotlight tex" data-expr="f(x) = \int_{-\infty}^\infty \hat f(\xi)\,e^{2 \pi i \xi x} \,d\xi"></h1>
             </div>
           </div>
         </div>
